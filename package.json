@@ -2,12 +2,30 @@
   "devDependencies": {
     "eslint": "^4.14.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-plugin-import": "^2.8.0",
+    "stylelint": "^8.4.0",
+    "stylelint-order": "^0.8.0"
   },
   "scripts": {
     "start": "node index.js"
   },
   "eslintConfig": {
     "extends": "airbnb-base"
+  },
+  "stylelint": {
+    "plugins": ["stylelint-order"],
+    "rules": {
+      "order/properties-order": [
+        "max-width",
+        "margin",
+        "margin-top",
+        "margin-right",
+        "margin-left",
+        "padding-right",
+        "padding-left",
+        "font-weight",
+        "line-height"
+      ]
+    }
   }
 }
