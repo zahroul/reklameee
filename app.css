@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin-left: 2em;
+}
+dd + dt,
+dd + dd {
+  margin-top: 0.5em;
+}
+
+figure {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+main {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+img {
+  max-width: 100%;
+}
