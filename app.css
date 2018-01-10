@@ -3,6 +3,11 @@ body {
   line-height: 1.5rem;
 }
 
+h1 {
+  font-size: 1.5em;
+  line-height: 1.166666667em;
+}
+
 dt {
   font-weight: 600;
 }
@@ -25,6 +30,20 @@ main {
   padding-left: 1em;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 img {
   max-width: 100%;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background-color: #fff;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
 }

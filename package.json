@@ -16,15 +16,23 @@
     "plugins": ["stylelint-order"],
     "rules": {
       "order/properties-order": [
+        "list-style-type",
         "max-width",
         "margin",
         "margin-top",
         "margin-right",
         "margin-left",
+        "padding",
         "padding-right",
         "padding-left",
+        "border",
+        "background-color",
+        "color",
+        "font",
+        "font-size",
         "font-weight",
-        "line-height"
+        "line-height",
+        "text-align"
       ]
     }
   }
