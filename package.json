@@ -10,7 +10,8 @@
     "start": "node index.js"
   },
   "eslintConfig": {
-    "extends": "airbnb-base"
+    "extends": "airbnb-base",
+    "env": { "browser": true }
   },
   "stylelint": {
     "plugins": ["stylelint-order"],
