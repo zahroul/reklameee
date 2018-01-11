@@ -18,7 +18,13 @@
     "rules": {
       "order/properties-order": [
         "list-style-type",
+        "overflow-y",
+        "position",
+        "top",
+        "left",
+        "width",
         "max-width",
+        "height",
         "margin",
         "margin-top",
         "margin-right",
@@ -28,12 +34,15 @@
         "padding-left",
         "border",
         "background-color",
+        "object-fit",
+        "object-position",
         "color",
         "font",
         "font-size",
         "font-weight",
         "line-height",
-        "text-align"
+        "text-align",
+        "transform"
       ]
     }
   }
