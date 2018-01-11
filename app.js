@@ -1,3 +1,9 @@
+const billboardItem = document.querySelector('figure');
+
 document.querySelector('button').addEventListener('click', () => {
-  document.querySelector('figure').removeAttribute('hidden');
+  billboardItem.removeAttribute('hidden');
+});
+
+billboardItem.querySelector('button').addEventListener('click', () => {
+  billboardItem.setAttribute('hidden', '');
 });

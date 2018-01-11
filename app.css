@@ -50,10 +50,6 @@ img {
 }
 
 button {
-  padding: 0;
-  border: 0;
-  background-color: #fff;
   color: inherit;
   font: inherit;
-  text-align: inherit;
 }
