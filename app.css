@@ -41,6 +41,16 @@ ul {
   list-style-type: none;
   padding-left: 0;
 }
+ul button {
+  overflow-x: hidden;
+  width: 100%;
+  padding: 0.5em 0;
+  border: 0;
+  background-color: #fff;
+  text-align: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 img {
   width: calc(100vw - 2em);
