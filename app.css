@@ -1,3 +1,9 @@
+*:focus {
+  outline-style: dotted;
+  outline-offset: 1px;
+  outline-width: 2px;
+}
+
 body {
   margin: 0;
   line-height: 1.5rem;
@@ -42,7 +48,7 @@ ul {
   padding-left: 0;
 }
 ul button {
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
   border-color: transparent;
   background-color: #fff;
@@ -64,17 +70,15 @@ button {
   color: inherit;
   font: inherit;
 }
+button::-moz-focus-inner {
+  border: 0;
+}
 
 input {
   width: 100%;
   padding: 0.5em 1em;
   border: 1px solid #c1c1c1;
   font: inherit;
-}
-input:focus {
-  outline-style: dotted;
-  outline-offset: 1px;
-  outline-width: 2px;
 }
 
 label > *:first-child {

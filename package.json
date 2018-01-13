@@ -19,7 +19,6 @@
       "order/properties-order": [
         "list-style-type",
         "overflow",
-        "overflow-x",
         "overflow-y",
         "position",
         "top",
