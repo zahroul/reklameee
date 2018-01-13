@@ -75,3 +75,10 @@ input:focus {
   outline-offset: 1px;
   outline-width: 2px;
 }
+
+label > *:first-child {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
