@@ -71,8 +71,15 @@ const app = {
 
 document.querySelector('input').addEventListener('change', (event) => {
   const keyword = event.target.value.trim();
+  const billboardsList = document.querySelector('ul');
 
   if (keyword === '') return false;
+
+  if (billboardsList.children.length > 1) {
+    for (let i = 1; i < billboardsList.children.length; i += 1) {
+      billboardsList.children[i].remove();
+    }
+  }
 
   return app.getBillboardsList()
     .then(response => app.searchBillboard(response.billboardsList, keyword))
