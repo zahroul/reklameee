@@ -68,3 +68,11 @@ const app = {
     template.parentNode.appendChild(details);
   },
 };
+
+document.querySelector('input').addEventListener('change', (event) => {
+  const keyword = event.target.value.trim();
+
+  app.getBillboardsList()
+    .then(response => app.searchBillboard(response.billboardsList, keyword))
+    .then(searchResults => app.fillBillboardsList(searchResults));
+});
