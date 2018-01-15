@@ -17,11 +17,17 @@ const app = {
   fillBillboardsList(billboardsList) {
     const list = document.querySelector('ul');
 
-    billboardsList.forEach(() => {
-      const item = document.getElementById('billboards-list-item').content.cloneNode(true);
-
-      list.appendChild(item);
+    billboardsList.forEach((billboard) => {
+      list.appendChild(this.createBillboardsListItem(billboard));
     });
+  },
+
+  createBillboardsListItem(billboard) {
+    const item = document.getElementById('billboards-list-item').content.cloneNode(true);
+
+    item.querySelector('button').textContent = billboard.location;
+
+    return item;
   },
 };
 
