@@ -45,10 +45,8 @@ const app = {
   },
 
   fillBillboardsList(billboardsList) {
-    const list = document.querySelector('ul');
-
     billboardsList.forEach((billboard) => {
-      list.appendChild(this.createBillboardsListItem(billboard));
+      this.billboardsList.appendChild(this.createBillboardsListItem(billboard));
     });
   },
 
