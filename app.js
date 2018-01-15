@@ -93,8 +93,11 @@ const app = {
 
 document.querySelector('input').addEventListener('change', (event) => {
   const keyword = event.target.value.trim();
+  const alert = document.querySelector('[role="alert"]');
 
   if (keyword === '') return false;
+
+  if (document.body.contains(alert)) alert.remove();
 
   if (app.billboardsList.children.length > 1) app.emptyBillboardsList();
 
