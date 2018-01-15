@@ -1,4 +1,6 @@
 const app = {
+  billboardsList: document.querySelector('ul'),
+
   getBillboardsList() {
     return new Promise((resolve) => {
       const request = new XMLHttpRequest();
@@ -50,6 +52,12 @@ const app = {
     });
   },
 
+  emptyBillboardsList() {
+    for (let i = 1; i < this.billboardsList.children.length; i += 1) {
+      this.billboardsList.children[i].remove();
+    }
+  },
+
   createBillboardsListItem(billboard) {
     const item = document.getElementById('billboards-list-item').content.cloneNode(true);
     const button = item.querySelector('button');
@@ -71,15 +79,10 @@ const app = {
 
 document.querySelector('input').addEventListener('change', (event) => {
   const keyword = event.target.value.trim();
-  const billboardsList = document.querySelector('ul');
 
   if (keyword === '') return false;
 
-  if (billboardsList.children.length > 1) {
-    for (let i = 1; i < billboardsList.children.length; i += 1) {
-      billboardsList.children[i].remove();
-    }
-  }
+  if (app.billboardsList.children.length > 1) app.emptyBillboardsList();
 
   return app.getBillboardsList()
     .then(response => app.searchBillboard(response.billboardsList, keyword))
