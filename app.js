@@ -13,6 +13,16 @@ const app = {
       request.send();
     });
   },
+
+  fillBillboardsList(billboardsList) {
+    const list = document.querySelector('ul');
+
+    billboardsList.forEach(() => {
+      const item = document.getElementById('billboards-list-item').content.cloneNode(true);
+
+      list.appendChild(item);
+    });
+  },
 };
 
 const billboardItem = document.querySelector('figure');
