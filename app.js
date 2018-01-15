@@ -36,12 +36,7 @@ const app = {
     const template = document.getElementById('billboard-details');
     const details = template.content.cloneNode(true);
 
+    details.querySelector('button').addEventListener('click', event => event.target.parentNode.remove());
     template.parentNode.appendChild(details);
   },
 };
-
-const billboardItem = document.querySelector('figure');
-
-billboardItem.querySelector('button').addEventListener('click', () => {
-  billboardItem.setAttribute('hidden', '');
-});
