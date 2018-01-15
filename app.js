@@ -81,6 +81,10 @@ const app = {
     alert.querySelector('p').textContent += `${keyword}.`;
     template.parentNode.appendChild(alert);
   },
+
+  displaySearchResults(searchResults) {
+    this.fillBillboardsList(searchResults);
+  },
 };
 
 document.querySelector('input').addEventListener('change', (event) => {
@@ -92,5 +96,5 @@ document.querySelector('input').addEventListener('change', (event) => {
 
   return app.getBillboardsList()
     .then(response => app.searchBillboard(response.billboardsList, keyword))
-    .then(searchResults => app.fillBillboardsList(searchResults));
+    .then(searchResults => app.displaySearchResults(searchResults));
 });
