@@ -14,6 +14,34 @@ const app = {
     });
   },
 
+  searchBillboard(billboardsList, keyword) {
+    const searchResults = [];
+
+    billboardsList.forEach((billboard) => {
+      if (this.compareString(billboard.location, keyword)) searchResults.push(billboard);
+    });
+
+    return searchResults;
+  },
+
+  compareString(location, keyword) {
+    let keywordCharIndex = 0;
+
+    for (let i = 0; i < location.length; i += 1) {
+      if (keywordCharIndex < keyword.length) {
+        if (location.charAt(i).toLowerCase() !== keyword.charAt(keywordCharIndex).toLowerCase()) {
+          keywordCharIndex = 0;
+        } else {
+          keywordCharIndex += 1;
+        }
+
+        if (keyword.charAt(keywordCharIndex) === undefined) break;
+      }
+    }
+
+    return keywordCharIndex === keyword.length;
+  },
+
   fillBillboardsList(billboardsList) {
     const list = document.querySelector('ul');
 
