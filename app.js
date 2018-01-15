@@ -82,8 +82,12 @@ const app = {
     template.parentNode.appendChild(alert);
   },
 
-  displaySearchResults(searchResults) {
-    this.fillBillboardsList(searchResults);
+  displaySearchResults(searchResults, keyword) {
+    if (searchResults.length === 0) {
+      this.createSearchAlert(keyword);
+    } else {
+      this.fillBillboardsList(searchResults);
+    }
   },
 };
 
@@ -96,5 +100,5 @@ document.querySelector('input').addEventListener('change', (event) => {
 
   return app.getBillboardsList()
     .then(response => app.searchBillboard(response.billboardsList, keyword))
-    .then(searchResults => app.displaySearchResults(searchResults));
+    .then(searchResults => app.displaySearchResults(searchResults, keyword));
 });
