@@ -29,6 +29,13 @@ const app = {
 
     return item;
   },
+
+  createBillboardDetails() {
+    const template = document.getElementById('billboard-details');
+    const details = template.content.cloneNode(true);
+
+    template.parentNode.appendChild(details);
+  },
 };
 
 const billboardItem = document.querySelector('figure');
