@@ -24,8 +24,10 @@ const app = {
 
   createBillboardsListItem(billboard) {
     const item = document.getElementById('billboards-list-item').content.cloneNode(true);
+    const button = item.querySelector('button');
 
-    item.querySelector('button').textContent = billboard.location;
+    button.textContent = billboard.location;
+    button.addEventListener('click', () => this.createBillboardDetails());
 
     return item;
   },
@@ -39,10 +41,6 @@ const app = {
 };
 
 const billboardItem = document.querySelector('figure');
-
-document.querySelector('button').addEventListener('click', () => {
-  billboardItem.removeAttribute('hidden');
-});
 
 billboardItem.querySelector('button').addEventListener('click', () => {
   billboardItem.setAttribute('hidden', '');
