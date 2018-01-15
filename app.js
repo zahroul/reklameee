@@ -72,7 +72,9 @@ const app = {
 document.querySelector('input').addEventListener('change', (event) => {
   const keyword = event.target.value.trim();
 
-  app.getBillboardsList()
+  if (keyword === '') return false;
+
+  return app.getBillboardsList()
     .then(response => app.searchBillboard(response.billboardsList, keyword))
     .then(searchResults => app.fillBillboardsList(searchResults));
 });
