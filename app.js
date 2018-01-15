@@ -73,6 +73,14 @@ const app = {
     details.querySelector('button').addEventListener('click', event => event.target.parentNode.remove());
     template.parentNode.appendChild(details);
   },
+
+  createSearchAlert(keyword) {
+    const template = document.getElementById('search-alert');
+    const alert = template.content.cloneNode(true);
+
+    alert.querySelector('p').textContent += `${keyword}.`;
+    template.parentNode.appendChild(alert);
+  },
 };
 
 document.querySelector('input').addEventListener('change', (event) => {
