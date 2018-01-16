@@ -1,4 +1,5 @@
 const app = {
+  loadingIndicator: document.getElementById('loading-indicator'),
   billboardsList: document.querySelector('ul'),
 
   getBillboardsList() {
@@ -83,6 +84,8 @@ const app = {
   },
 
   displaySearchResults(searchResults, keyword) {
+    this.loadingIndicator.setAttribute('hidden', '');
+
     if (searchResults.length === 0) {
       this.createSearchAlert(keyword);
     } else {
@@ -100,6 +103,8 @@ document.querySelector('input').addEventListener('change', (event) => {
   if (document.body.contains(alert)) alert.remove();
 
   if (app.billboardsList.children.length > 1) app.emptyBillboardsList();
+
+  app.loadingIndicator.removeAttribute('hidden');
 
   return app.getBillboardsList()
     .then(response => app.searchBillboard(response.billboardsList, keyword))
