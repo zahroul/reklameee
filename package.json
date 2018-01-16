@@ -20,6 +20,7 @@
         "list-style-type",
         "overflow",
         "overflow-y",
+        "visibility",
         "position",
         "top",
         "left",
@@ -50,6 +51,7 @@
         "text-align",
         "text-overflow",
         "white-space",
+        "animation",
         "transform"
       ]
     }

@@ -87,3 +87,14 @@ label > *:first-child {
   width: 1px;
   height: 1px;
 }
+
+#loading-indicator {
+  text-align: center;
+  animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
