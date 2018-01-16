@@ -17,6 +17,7 @@
     "plugins": ["stylelint-order"],
     "rules": {
       "order/properties-order": [
+        "content",
         "list-style-type",
         "overflow",
         "overflow-y",
@@ -30,6 +31,7 @@
         "margin",
         "margin-top",
         "margin-right",
+        "margin-bottom",
         "margin-left",
         "padding",
         "padding-right",
