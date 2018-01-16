@@ -39,8 +39,16 @@ figure {
 }
 
 main {
+  position: relative;
+  height: 100vh;
   padding-right: 1em;
   padding-left: 1em;
+}
+main > header {
+  position: absolute;
+  top: 30%;
+  width: calc(100% - 2em);
+  transform: translateY(-30%);
 }
 
 ul {
@@ -80,12 +88,8 @@ input {
   border: 1px solid #c1c1c1;
   font: inherit;
 }
-
-label > *:first-child {
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-  height: 1px;
+span + input {
+  margin-top: 0.5em;
 }
 
 #loading-indicator {
