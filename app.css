@@ -104,6 +104,8 @@ main:target > [role="alert"] {
 ul button {
   overflow: hidden;
   width: 100%;
+  padding-right: 0;
+  padding-left: 0;
   border-color: transparent;
   background-color: #fff;
   text-align: inherit;
