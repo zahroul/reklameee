@@ -19,11 +19,13 @@
       "order/properties-order": [
         "content",
         "list-style-type",
+        "display",
         "overflow",
         "overflow-y",
         "visibility",
         "position",
         "top",
+        "right",
         "left",
         "width",
         "max-width",

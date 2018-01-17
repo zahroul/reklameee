@@ -56,16 +56,42 @@ hr:before {
 }
 
 main {
-  position: relative;
-  height: 100vh;
   padding-right: 1em;
   padding-left: 1em;
 }
 main > header {
   position: absolute;
   top: 30%;
-  width: calc(100% - 2em);
+  right: 1em;
+  left: 1em;
   transform: translateY(-30%);
+}
+main > header input {
+  margin-top: 0.5em;
+}
+main > ul,
+main > [role="alert"] {
+  display: none;
+}
+main:target > header {
+  position: static;
+  transform: inherit;
+}
+main:target > header input {
+  margin-top: 0;
+}
+main:target > header > label span {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+main:target > header > *:nth-child(n+3) {
+  display: none;
+}
+main:target > ul,
+main:target > [role="alert"] {
+  display: inherit;
 }
 
 ul {
@@ -104,9 +130,6 @@ input {
   padding: 0.5em 1em;
   border: 1px solid #c1c1c1;
   font: inherit;
-}
-span + input {
-  margin-top: 0.5em;
 }
 
 #loading-indicator {
