@@ -76,6 +76,10 @@ main > ul,
 main > [role="alert"] {
   display: none;
 }
+main > ul {
+  list-style-type: none;
+  padding-left: 0;
+}
 main:target > header {
   position: static;
   transform: inherit;
