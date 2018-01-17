@@ -100,6 +100,8 @@ document.querySelector('input').addEventListener('change', (event) => {
 
   if (keyword === '') return false;
 
+  window.location.hash = 'search-results';
+
   if (document.body.contains(alert)) alert.remove();
 
   if (app.billboardsList.children.length > 1) app.emptyBillboardsList();
