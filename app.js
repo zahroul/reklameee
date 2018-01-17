@@ -94,6 +94,8 @@ const app = {
   },
 };
 
+const dialog = document.querySelector('[role="dialog"]');
+
 document.querySelector('input').addEventListener('change', (event) => {
   const keyword = event.target.value.trim();
   const alert = document.querySelector('[role="alert"]');
@@ -114,5 +116,9 @@ document.querySelector('input').addEventListener('change', (event) => {
 });
 
 document.getElementById('post-billboard').addEventListener('click', () => {
-  document.querySelector('[role="dialog"]').removeAttribute('hidden');
+  dialog.removeAttribute('hidden');
+});
+
+dialog.querySelector('button').addEventListener('click', () => {
+  dialog.setAttribute('hidden', '');
 });
