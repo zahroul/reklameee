@@ -112,3 +112,7 @@ document.querySelector('input').addEventListener('change', (event) => {
     .then(response => app.searchBillboard(response.billboardsList, keyword))
     .then(searchResults => app.displaySearchResults(searchResults, keyword));
 });
+
+document.getElementById('post-billboard').addEventListener('click', () => {
+  document.querySelector('[role="dialog"]').removeAttribute('hidden');
+});
