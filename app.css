@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 *:focus {
   outline-style: dotted;
   outline-offset: 1px;
@@ -94,10 +97,6 @@ main:target > [role="alert"] {
   display: inherit;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
 ul button {
   overflow: hidden;
   width: 100%;
@@ -141,4 +140,22 @@ input {
   to {
     visibility: hidden;
   }
+}
+
+[role="dialog"] {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+[role="dialog"] div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
 }
