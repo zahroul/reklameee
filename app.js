@@ -21,7 +21,7 @@ const app = {
     const searchResults = [];
 
     billboardsList.forEach((billboard) => {
-      if (this.compareString(billboard.location, keyword)) searchResults.push(billboard);
+      if (this.compareString(billboard.location.hint, keyword)) searchResults.push(billboard);
     });
 
     return searchResults;
@@ -61,7 +61,7 @@ const app = {
     const item = document.getElementById('billboards-list-item').content.cloneNode(true);
     const button = item.querySelector('button');
 
-    button.textContent = billboard.location;
+    button.textContent = billboard.location.hint;
     button.addEventListener('click', () => this.createBillboardDetails());
 
     return item;
