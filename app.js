@@ -77,7 +77,7 @@ const app = {
     this.createBillboardMetadataItem(details, 'Ukuran', billboard.size);
     this.createBillboardMetadataItem(details, 'Lokasi', `${billboard.location.hint} (<a href="${billboard.location.preview}">Tinjau di Google Street View</a>)`);
     this.createBillboardMetadataItem(details, 'Keterangan', billboard.additionalInfo);
-    this.createBillboardMetadataItem(details, 'Kontak', billboard.contact);
+    this.createBillboardMetadataItem(details, 'Kontak', `${billboard.contact.name} <a href="tel:${billboard.contact.phone}">${billboard.contact.phone}</a>`);
 
     details.querySelector('button').addEventListener('click', event => event.target.parentNode.remove());
     template.parentNode.appendChild(details);
