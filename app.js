@@ -75,7 +75,7 @@ const app = {
     details.querySelector('img').setAttribute('alt', billboard.location.hint);
 
     this.createBillboardMetadataItem(details, 'Ukuran', billboard.size);
-    this.createBillboardMetadataItem(details, 'Lokasi', billboard.location);
+    this.createBillboardMetadataItem(details, 'Lokasi', `${billboard.location.hint} (<a href="${billboard.location.preview}">Tinjau di Google Street View</a>)`);
     this.createBillboardMetadataItem(details, 'Keterangan', billboard.additionalInfo);
     this.createBillboardMetadataItem(details, 'Kontak', billboard.contact);
 
@@ -102,7 +102,7 @@ const app = {
   createBillboardMetadataItemValue(container, value) {
     const itemValue = container.getElementById('metadata-item-value').content.cloneNode(true);
 
-    itemValue.querySelector('dd').textContent = value;
+    itemValue.querySelector('dd').innerHTML = value;
 
     return itemValue;
   },
