@@ -116,6 +116,7 @@ ul button {
 img {
   width: calc(100vw - 2em);
   height: 60vh;
+  background-color: #c1c1c1;
   object-fit: cover;
   object-position: top;
 }
