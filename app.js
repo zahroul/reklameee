@@ -90,10 +90,21 @@ const app = {
     itemKey.querySelector('dt').textContent = key;
     template.parentNode.appendChild(itemKey);
 
+    if (typeof value === 'object' && value.length !== undefined) {
+      for (let i = 0; i < value.length; i += 1) {
+        template.parentNode.appendChild(this.createBillboardMetadataItemValue(container, value[i]));
+      }
+    } else {
+      template.parentNode.appendChild(this.createBillboardMetadataItemValue(container, value));
+    }
+  },
+
+  createBillboardMetadataItemValue(container, value) {
     const itemValue = container.getElementById('metadata-item-value').content.cloneNode(true);
 
     itemValue.querySelector('dd').textContent = value;
-    template.parentNode.appendChild(itemValue);
+
+    return itemValue;
   },
 
   createSearchAlert(keyword) {
