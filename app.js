@@ -62,17 +62,38 @@ const app = {
     const button = item.querySelector('button');
 
     button.textContent = billboard.location.hint;
-    button.addEventListener('click', () => this.createBillboardDetails());
+    button.addEventListener('click', () => this.createBillboardDetails(billboard));
 
     return item;
   },
 
-  createBillboardDetails() {
+  createBillboardDetails(billboard) {
     const template = document.getElementById('billboard-details');
     const details = template.content.cloneNode(true);
 
+    details.querySelector('img').setAttribute('src', billboard.photo);
+    details.querySelector('img').setAttribute('alt', billboard.location.hint);
+
+    this.createBillboardMetadataItem(details, 'Ukuran', billboard.size);
+    this.createBillboardMetadataItem(details, 'Lokasi', billboard.location);
+    this.createBillboardMetadataItem(details, 'Keterangan', billboard.additionalInfo);
+    this.createBillboardMetadataItem(details, 'Kontak', billboard.contact);
+
     details.querySelector('button').addEventListener('click', event => event.target.parentNode.remove());
     template.parentNode.appendChild(details);
+  },
+
+  createBillboardMetadataItem(container, key, value) {
+    const template = container.getElementById('metadata-item');
+    const itemKey = template.content.cloneNode(true);
+
+    itemKey.querySelector('dt').textContent = key;
+    template.parentNode.appendChild(itemKey);
+
+    const itemValue = container.getElementById('metadata-item-value').content.cloneNode(true);
+
+    itemValue.querySelector('dd').textContent = value;
+    template.parentNode.appendChild(itemValue);
   },
 
   createSearchAlert(keyword) {
