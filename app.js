@@ -12,7 +12,7 @@ const app = {
         }
       };
 
-      request.open('GET', 'reklame-data.json');
+      request.open('GET', 'https://api.myjson.com/bins/bqmn9');
       request.send();
     });
   },
