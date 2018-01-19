@@ -65,6 +65,7 @@ hr:before {
 }
 
 main {
+  min-height: calc(100vh - 3.5em);
   padding-right: 1em;
   padding-left: 1em;
 }
