@@ -15,6 +15,9 @@ http.createServer((request, response) => {
     case '/app.css':
       readFile(`${__dirname}${requestUrl}`, 'text/css', response);
       break;
+    case '/app.js':
+      readFile(`${__dirname}${requestUrl}`, 'text/javascript', response);
+      break;
     default:
       readFile(`${__dirname}/index.html`, 'text/html', response);
   }
